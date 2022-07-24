@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div>
+      <span><<</span>
+      <div class="container">
+        <div class="show">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <div class="item">6</div>
+          <div class="item">7</div>
+          <div class="item">8</div>
+          <div class="item">9</div>
+          <div class="item">10</div>
+        </div>
+      </div>
+      <span>>></span>
+    </div>
+  </body>
+
+  <script>
+    const show = document.getElementsByClassName('show')[0]
+    let width = 0
+    setInterval(() => {
+      width += -150
+      show.style.left = width + 'px'
+    }, 1000)
+  </script>
+
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      transition: all 0.5s;
+      background-color: aqua;
+    }
+    .div1 {
+      background-color: bisque;
+    }
+    .div1:hover {
+      background-color: blue;
+      /* margin-left: 200px; */
+      width: 400px;
+    }
+    .div2 {
+      background-color: aqua;
+    }
+    .container {
+      display: flex;
+      position: relative;
+      margin: 200px auto;
+      width: 500px;
+      height: 200px;
+      border: 1px solid brown;
+      background-color: #fff;
+      overflow: auto;
+    }
+    .show {
+      position: absolute;
+      display: flex;
+      /* left: -150px; */
+    }
+    .item {
+      flex-shrink: 0;
+    }
+  </style>
+</html>

@@ -5,12 +5,16 @@ import Container from '../components/Container.vue'
 const routes = [
   {
     path: '/',
-    component: Container,
+    component: Container
   },
   {
     path: '/treeselect',
     component: TreeSelect
   },
+  {
+    path: '/horizontalScroll',
+    component: () => import('../components/HorizontalScroll/index.vue')
+  }
   // {
   //   path: '/login',
   //   component: () => import('../views/login/index.vue')

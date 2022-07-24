@@ -1,5 +1,5 @@
 <template>
-  <el-select v-model="treeVal" placeholder="Select">
+  <el-select v-model="treeVal" multiple placeholder="Select">
     <el-option style="height: auto">
       <div>
         <el-tree
@@ -7,6 +7,7 @@
           :data="testArray"
           node-key="value"
           highlight-current
+          @node-click="onNodeClick"
         />
       </div>
     </el-option>
@@ -117,6 +118,10 @@ const onSelectChange = (val: string) => {
   console.log(val);
 
   treeRef.value?.setCurrentKey(val);
+};
+
+const onNodeClick = (node: any, data: any, event: any) => {
+  console.log(node, data, event);
 };
 
 watch(
